@@ -92,6 +92,8 @@ section {
 	background-color:#B3D4FC;
 	position:absolute;
 	top:0px;
+    overflow-y        : auto;
+    -webkit-overflow-scrolling: touch; 
 }
 
 header {
@@ -107,11 +109,15 @@ nav > ul > li {
 }
 
 #content {
-  overflow-y        : auto;
-  -webkit-overflow-scrolling: touch; 
   display:block;
   background-color:#ffaaaa;
+  position:absolute;
+}
+#clipZone {
+  display:block;
   position:relative;
+  overflow: hidden;
+  clip: auto;
 }
 
 
