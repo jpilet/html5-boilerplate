@@ -83,25 +83,36 @@ textarea {
 }
 
 /* ==========================================================================
-   Browse Happy prompt
-   ========================================================================== */
-
-.browsehappy {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
-}
-
-/* ==========================================================================
    Author's custom styles
    ========================================================================== */
 
 
+section {
+	margin: 5px;
+	background-color:#B3D4FC;
+	position:absolute;
+	top:0px;
+}
 
+header {
+	margin: 8px;
+}
 
+nav > ul {
+	display: inline-block;
+	margin: 0px;
+}
+nav > ul > li {
+	display: inline-block;
+}
 
-
+#content {
+  overflow-y        : auto;
+  -webkit-overflow-scrolling: touch; 
+  display:block;
+  background-color:#ffaaaa;
+  position:relative;
+}
 
 
 
