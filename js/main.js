@@ -71,16 +71,16 @@ jQuery( function($){
 	
 	function selectSection() {
 		var section = currentSection();
-			var left = -(section.attr("data-x") * horizontalSeparation) + 100;
-			var top = -(section.attr("data-y") * verticalSeparation) + 100;
-			$("#clipZone")[0].scrollLeft = 0;
-			$("#clipZone")[0].scrollTop = 0;
-			
-			$("#content").css({
-				"left": left + "px",
-				"top": top + "px"
-			});
-			
+		var left = -(section.attr("data-x") * horizontalSeparation) + 100;
+		var top = -(section.attr("data-y") * verticalSeparation) + 100;
+		
+		$("#clipZone")[0].scrollLeft = 0;
+		$("#clipZone")[0].scrollTop = 0;
+
+		$("#content").css({
+			"left" : left + "px",
+			"top" : top + "px"
+		}); 		
 	}
 	
 	resizeSections();
