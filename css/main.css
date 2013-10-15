@@ -118,8 +118,8 @@ nav > ul > li {
   position:relative;
   overflow: hidden;
   clip: auto;
-  perspective: 500;
-  -webkit-perspective: 500; /* Safari and Chrome */
+  perspective: 500px;
+  -webkit-perspective: 500px; /* Safari and Chrome */
 }
 
 
