@@ -69,24 +69,55 @@ jQuery( function($){
 		return $(location.hash ? location.hash: "#home");
 	}
 	
-	function selectSection() {
-		var section = currentSection();
-		var left = -(section.attr("data-x") * horizontalSeparation) + 100;
-		var top = -(section.attr("data-y") * verticalSeparation) + 100;
-		
-		$("#clipZone")[0].scrollLeft = 0;
-		$("#clipZone")[0].scrollTop = 0;
-
-		$("#content").css({
-			"left" : left + "px",
-			"top" : top + "px"
-		}); 		
+	function sectionPosition(section) {
+		return {
+			left: -(section.attr("data-x") * horizontalSeparation) + 100,
+			top: -(section.attr("data-y") * verticalSeparation) + 100
+		};
 	}
 	
-	resizeSections();
+	var selectedSection = null;
+	function selectSection() {
+		var section = currentSection();
+		var previousSection = selectedSection;
+		
+		if (previousSection === section) {
+			return;
+		}
+		selectedSection = section;
+		
+		var pos = sectionPosition(section);
+		$("#clipZone")[0].scrollLeft = 0;
+		$("#clipZone")[0].scrollTop = 0;
+		if (previousSection && Modernizr.cssanimations) {
+			var prevPos = sectionPosition(previousSection);
+			var mid = {
+				left: (prevPos.left + pos.left) / 2,
+				top: (prevPos.top + pos.top) / 2
+			};
+			
+			var anim = Zanimo($("#content")[0]);
+			if (Modernizr.csstransforms3d) {
+				anim = anim
+					.then(Zanimo.transitionf("transform", "translate3d(" + mid.left + "px," + mid.top + "px, -200px)", 400, "ease-in"))
+					.then(Zanimo.transitionf("transform", "translate3d(" + pos.left + "px," + pos.top + "px, 0px)", 400, "ease-out"));
+			} else {
+				anim = anim.then(Zanimo.transitionf("transform", "translate(" + pos.left + "px," + pos.top + "px)", 800, "ease-in-out"));
+			}
+			anim.fail(function() {
+				$("#content").css({
+					"transform": "translate(" + pos.left + "px," + pos.top + "px)"
+				}); 		
+			});
+		} else {
+			// Initial selection: no animation, or no animation support.
+			$("#content").css({
+				"transform": "translate(" + pos.left + "px," + pos.top + "px)"
+			}); 
+		}
+	}
+	
 	window.onresize = _.debounce( resizeSections , 200);
-	
-	selectSection();
-	
 	window.onhashchange = selectSection;
+	window.onresize();	
 });
