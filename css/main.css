@@ -99,18 +99,38 @@ section {
     overflow-y        : auto;
     -webkit-overflow-scrolling: touch; 
     box-shadow: 80px 80px 20px -20px rgba(0,0,0,.4);
+    z-index: 10;
 }
 
-header {
-	margin: 8px;
+body > header {
+    line-height: 1;
+	margin: 0px;
+	border-style: solid;
+	border-color: black;
+	border-width: 0px 3px 3px 3px;
+	box-shadow: 10px 10px 20px 0px rgba(0,0,0,.4);
+	position: relative;
+	z-index: 5;
+	width: 99%;
+	overflow: auto;
+	background-color: #00009E;
 }
 
 nav > ul {
-	display: inline-block;
-	margin: 0px;
+	display: inline;
+	margin: 12px 0px;
+	padding: 0px 0px;
 }
-nav > ul > li {
+
+body > header li {
 	display: inline-block;
+	font-family: 'Pixel', sans-serif;
+	font-size: 25px;
+}
+
+nav a {
+	text-decoration: none;
+	color: inherit;
 }
 
 #content {
@@ -126,13 +146,12 @@ nav > ul > li {
   background-repeat: repeat;
   background-size: 256px 256px;
   transform:translate3d(0px, 0px, -200px);
-  -webkit-transform:translate3d(0px, 0px, -200px);	
+  -webkit-transform:translate3d(0px, 0px, -200px);
   position: absolute;
   width: 10000px;
   height: 10000px;
   left: 0px;
   top: 0px;
-  
 }
 
 #clipZone {
@@ -144,15 +163,52 @@ nav > ul > li {
   -webkit-perspective: 500px; /* Safari and Chrome */
 }
 
+@font-face {
+    font-family: 'Pixel';
+    font-style: normal;
+    font-weight: 400;
+    src: url('FreePixel.ttf') format('truetype');
+}
 
+span.opticodeLogo {
+	font-family: 'Pixel', sans-serif;
+    font-size: 50px;
+    background-color: white;
+}
 
+span.opticodeLogo span.inverseVideo {
+	color: #DBCEC8;
+    background-color: #00009E;
+}
 
+body > header .opticodeLogo {
+	float:left;
+}
+body > header li {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #2020BE), color-stop(1, #00009E) );
+	background:-moz-linear-gradient( center top, #2020BE 5%, #00009E 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#2020BE', endColorstr='#00009E');
+	background-color:#00009E;
+	text-indent:0;
+	border: 2px solid 3030CE;
+	display:inline-block;
+	color:#DBCEC8;
+	text-decoration:none;
+	text-align:center;
+	padding: 0px 12px;
+	margin: 0px;
+}
+body > header li:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #1e62d0), color-stop(1, #3d94f6) );
+	background:-moz-linear-gradient( center top, #1e62d0 5%, #3d94f6 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#1e62d0', endColorstr='#3d94f6');
+	background-color:#1e62d0;
+}
 
-
-
-
-
-
+body > header li:active {
+	position:relative;
+	top:1px;
+}
 
 /* ==========================================================================
    Helper classes

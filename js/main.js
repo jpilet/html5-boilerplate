@@ -87,39 +87,35 @@ jQuery( function($){
 		};
 	}
 	
-	function translationForSection(section) {
-		var pos = sectionPosition(section);
-		return {
-			left: (geometry.clipZoneWidth - geometry.sectionWidth) / 2 - pos.left,
-			top: (geometry.clipZoneHeight - geometry.sectionHeight) / 2 - pos.top
-		};
-	}
-
-	var selectedSection = null;
+	var previousTranslation = null;
 	function selectSection() {
-		var section = currentSection();
-		var previousSection = selectedSection;
-		
-		if (previousSection === section) {
-			return;
+		function translationForSection(section) {
+			var pos = sectionPosition(section);
+			return {
+				left: (geometry.clipZoneWidth - geometry.sectionWidth) / 2 - pos.left,
+				top: (geometry.clipZoneHeight - geometry.sectionHeight) / 2 - pos.top,
+				z: 0
+			};
 		}
-		selectedSection = section;
 		
+		var section = currentSection();		
 		var pos = translationForSection(section);
 
-		if (previousSection && Modernizr.cssanimations) {
-			var prevPos = translationForSection(previousSection);
+		if (previousTranslation && Modernizr.cssanimations) {
 
 			var mid = {
-				left: (prevPos.left + pos.left) / 2,
-				top: (prevPos.top + pos.top) / 2
+				left: (previousTranslation.left + pos.left) / 2,
+				top: (previousTranslation.top + pos.top) / 2,
+				z: (previousTranslation.z + pos.z) / 2 - 200
 			};
 			
 			var anim = Zanimo($("#content")[0]);
 			if (Modernizr.csstransforms3d) {
 				anim = anim
-					.then(Zanimo.transitionf("transform", "translate3d(" + mid.left + "px," + mid.top + "px, -200px)", 400, "ease-in-out"))
-					.then(Zanimo.transitionf("transform", "translate3d(" + pos.left + "px," + pos.top + "px, 0px)", 400, "ease-in-out"));
+					.then(Zanimo.transitionf("transform",
+						"translate3d(" + mid.left + "px," + mid.top + "px, " + mid.z + "px)", 400, "ease-in-out"))
+					.then(Zanimo.transitionf("transform",
+						"translate3d(" + pos.left + "px," + pos.top + "px, " + pos.z + "px)", 400, "ease-in-out"));
 			} else {
 				anim = anim.then(Zanimo.transitionf("transform", "translate(" + pos.left + "px," + pos.top + "px)", 800, "ease-in-out"));
 			}
@@ -134,6 +130,7 @@ jQuery( function($){
 				"transform": "translate(" + pos.left + "px," + pos.top + "px)"
 			}); 
 		}
+		previousTranslation = pos;
 	}
 	
 	// Browsers try to scroll to the correct location.
@@ -143,7 +140,7 @@ jQuery( function($){
 		this.scrollTop = 0;
 	});
 
-	window.onresize = _.debounce( resizeSections , 200);
+	window.onresize = _.debounce( resizeSections , 20);
 	window.onhashchange = selectSection;
 	window.onresize();	
 });
