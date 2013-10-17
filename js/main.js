@@ -97,11 +97,6 @@ jQuery( function($){
 
 	var selectedSection = null;
 	function selectSection() {
-		// Browsers try to scroll to the correct location.
-		// Make sure to reset scrolling, we'll pace stuff ourselves.
-		$("#clipZone")[0].scrollLeft = 0;
-		$("#clipZone")[0].scrollTop = 0;
-		
 		var section = currentSection();
 		var previousSection = selectedSection;
 		
@@ -141,6 +136,13 @@ jQuery( function($){
 		}
 	}
 	
+	// Browsers try to scroll to the correct location.
+	// Make sure to reset scrolling, we'll pace stuff ourselves.
+	$("#clipZone").scroll(function() {
+		this.scrollLeft = 0;
+		this.scrollTop = 0;
+	});
+
 	window.onresize = _.debounce( resizeSections , 200);
 	window.onhashchange = selectSection;
 	window.onresize();	
