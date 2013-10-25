@@ -88,12 +88,12 @@ textarea {
 
 
 section {
-	margin: 5px;
+	margin: 0px;
 	background-color: rgba(255,255,255,.9);
 	border-width: 3px;
 	border-style: solid;
 	border-color: black;
-	padding: 3px;
+	padding: 8px;
 	position:absolute;
 	top:0px;
     overflow-y        : auto;
@@ -172,8 +172,7 @@ nav a {
 
 span.opticodeLogo {
 	font-family: 'Pixel', sans-serif;
-    font-size: 50px;
-    background-color: white;
+    font-weight: normal;
 }
 
 span.opticodeLogo span.inverseVideo {
@@ -181,8 +180,15 @@ span.opticodeLogo span.inverseVideo {
     background-color: #00009E;
 }
 
+span.opticodeLogo a {
+	text-decoration: none;
+	color: inherit;
+}
+
 body > header .opticodeLogo {
 	float:left;
+    font-size: 50px;
+    background-color: white;
 }
 body > header li {
 	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #2020BE), color-stop(1, #00009E) );
@@ -208,6 +214,17 @@ body > header li:hover {
 body > header li:active {
 	position:relative;
 	top:1px;
+}
+
+a {
+	color: #00009E;
+}
+
+table.simpleTable th {
+	text-align:right;
+}
+table.simpleTable th, table.simpleTable td {
+	padding: 0px 10px;
 }
 
 /* ==========================================================================

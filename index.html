@@ -10,31 +10,34 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<!-- mobile optimized -->
-		<meta name="viewport" content="width=device-width,initial-scale=1">
-		<!-- allow pinned sites -->
-		<meta name="application-name" content="opticode.ch" />
-
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<meta name="application-name" content="opticode.ch" />
 
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
-    <body><header><nav><a href="#home"><span class="opticodeLogo">opticod<span class="inverseVideo">e</span>.ch</span></a>
+    <body><header><nav><span class="opticodeLogo">opticode.ch</span>
 	    		<ul>
 	    			<li><a href="#services">services</a></li><li
 	    			><a href="#company">entreprise</a></li><li
-	    			><a href="#works">réalisations</a></li><li
-	    			><a href="#demos">démos</a></li>
+	    			><a href="#demos">démos</a></li><li
+	    			><a href="#contact">contact</a></li>
 	    		</ul>
 	    	</nav>
     	</header>
     	
-    	<div id="clipZone"><div id="content"><div id="background"></div>
+    	<div id="clipZone"><div id="content"><div id="background"> </div>
     	<section id ="home" data-radius="0" data-angle="0">
-    		<h1>opticode.ch: l'informatique de pointe</h1>
-    		<p>Votre spécialiste en matière de vision par ordinateur, de systèmes embarqués et d'optimisation.</p>
+    		<header>
+    		<h1><span class="opticodeLogo">opticode.ch</span></h1>
+    		<p>Votre spécialiste en matière de vision par ordinateur et d'informatique de pointe.</p>
+    		</header>
+    		<p>
+    		<span class="opticodeLogo">opticode.ch</span>
+    		est une <a href="#company">entreprise</a> qui fournit des <a href="#services">services très pointus</a>
+    		de conseil, de formation et de développement dans le domaine de l'informatique.
+    		</p>
+    		<p>N'hésitez pas à nous <a href="#contact">contacter</a>!</p>
     	</section>
     	
     	<section id="services" data-radius="1" data-angle="50">
@@ -51,28 +54,137 @@
     	</section>
     	
     	<section id="service-vision" data-radius="2" data-angle="0">
-    		<h1>Vision artificielle</h1>
+    		<header>
+    			<h1>Vision par ordinateur</h1>    			
+    		</header>
+    		<p>
+    			<span class="opticodeLogo"></span> est spécialisé en vision par ordinateur, plus
+    			particulièrement dans les domaines suivants:
+    		</p>
+			<ul>
+				<li>Détection et tracking d'objets</li>
+				<li>Segmentation</li>
+				<li>Calibration de caméras</li>
+				<li>Recherche dans de grandes bases de données</li>
+				<li>Réalité augmentée</li>
+				<li>Mesure d'objets déformés</li>
+			</ul>
+			<p>
+				Pour obtenir de bonnes performances, nous travaillons la plupart du temps en C++,
+				en utilisant si nécessaire des instructions SIMD comme SSE ou NEON.
+				Nous avons aussi une grande expérience dans l'utilisation d'OpenCV.
+    		</p>
     	</section>
 
     	<section id="service-embedded" data-radius="2" data-angle="25">
     		<h1>Systèmes embarqués</h1>
+    		
+    		<span class="opticodeLogo"></span> fournit les services suivants:
+    		<ul>
+    			<li>Programmation de systèmes embarqués;</li>
+    			<li>Programmation de microcontrolleurs en C++, C, assembleur, ou autre language;</li>
+    			<li>Programmation de drivers pour Windows, Mac ou Linux;</li>
+    			<li>Conseils et développement de matériel dédié;</li>
+			<li>Prototypage rapide.</li>
+    		</ul>
+
+		<p><a href="#contact">Contactez-nous pour obtenir un devis !</a></p>
+    		
+    		<span class="opticodeLogo"></span> a de l'expérience en matière de systèmes embarqués,
+    		que ce soit dans la conception du matériel ou la programmation. Julien Pilet a par
+    		exemple développé la carte <a href="http://armonie.calodox.org/">Armonie</a> en
+    		collaboration avec <a href="http://www.magnenat.net/">Stéphane Magnenat</a>. Ce système intègre
+    		un processeur ARM, 64 MB de mémoire vive, et 1MB de mémoire flash. Nous avons écrit
+    		notre propre boot loader et notre propre interface de déboguage GDB:
+    		<a href="http://armonie.calodox.org/jelie">Jelie</a>.
+    		
     	</section>
 
     	<section id="service-dev" data-radius="2" data-angle="50">
     		<h1>Développements spécialisés</h1>
-    	</section>
+    		
+		<span class="opticodeLogo"></span> vous fournit un développeur
+		extrêmement compétent et polyvalent pour des missions précises:
+		<ul>
+			<li>Optimisations par conception d'algorithmes plus performants;</li>
+			<li>Optimisations SIMD comme SSE ou NEON;</li>
+			<li>Une aide temporaire pour vous permettre de terminer un projet à temps;</li>
+			<li>Amélioration d'applications mobiles;</li>
+			<li>Développement de drivers pour Windows, Mac ou Linux</li>
+			<li>Développement d'application web HTML5</li>
+			<li>Analyse de performance d'une application</li>
+			<li>Déboguage de fuite de mémoire d'un programme en C++</li>
+			<li>Développement d'applications dans le cloud:
+			traitement à grande échelle avec Hadoop, mapreduce et
+			base de données "no sql".</li>
+		</ul>
+
+		<p><a href="#contact">Contactez-nous pour obtenir un devis !</a></p>
+
+	</section>
 
     	<section id="service-code-review" data-radius="2" data-angle="75">
-    		<h1>Relecture de code</h1>
+		<header>
+		    <h1>Relecture de code</h1>
+		</header>
+
+		<h2>Qu'est-ce que la relecture de code ?</h2>
+		<p>La relecture de code (code review, en anglais) est un outils fantastique qui
+		permet d'améliorer grandement la qualité du code produit par une équipe de
+		développement.</p>
+		<p>Le concept est simple: écrire le code pour les collègues plutôt que pour la
+		machine. En pratique, des outils comme gerrit code review ou review board facilite
+		grandement la relecture et la discussion à propos du code.<p>
+
+		<h2>Les avantages de la relecture de code</h2>
+		<p>Lorsque le code est écrit pour être compris par les collègues plutôt que par
+		l'ordinateur, les avantages sont immédiats:
+		<ul>
+			<li>Le code est compréhensible et donc plus facile à maintenir;</li>
+			<li>Le code a moins de bugs, puisque certains sont trouvés à la
+			relecture;</li>
+			<li>L'auteur enseigne au relecteur lorsqu'il résoud un problème avec une
+			solution particulièrement élégante;</li>
+			<li>L'autre apprend du relecteur lorsque celui-ci propose une meilleure
+			manière de résoudre un problème;</li>
+			<li>Le code suit le style décidé par l'équipe. Il est homogène et plus
+			facile à lire.</li>
+		</ul>
+
+		<h2>Les services <span class="opticodeLogo"></span> en matière de relecture de
+		code</h2>
+		<p><span class="opticodeLogo"></span> vous aide à mettre en place la relecture de
+		code dans votre équipe, en plusieurs étapes:
+		<ul>
+			<li>Un spécialiste, ancien développeur chez Google, rencontre votre équipe
+			pour en comprendre les méthodes de travail;</li>
+			<li>Votre équipe détermine, sur les conseils d'<span class="opticodeLogo"></span>,
+			une méthode de travail qui correspond exactement à vos besoins
+			spécifiques;</li>
+			<li>Nous mettons en place les outils nécessaires;</li>
+			<li>Nous présentons la méthode choisie à toute l'équipe;</li>
+			<li>Nous supervisons les premiers pas des développeurs dans l'utilisation de
+			la méthode choisie. L'équipe continue de travailler sur ses tâches en cours,
+			de sorte à ce que la mise en place de la relecture de code obligatoire
+			prenne le moins de temps possible.</li>
+		</ul>
+
+		<p><a href="#contact">Contactez-nous pour plus d'informations !</a></p>
     	</section>
     	
     	<section id="company" data-radius="1" data-angle="190">
     		<h1>L'entreprise</h1>
     		<p>Opticode.ch est une SàRL fondée par Julien Pilet en 2013.</p>
     	</section>
-    	
-    	<section id="works" data-radius="1" data-angle="260">
-    		<h1>Les réalisations de Julien Pilet</h1>
+
+    	<section id="contact" data-radius="2" data-angle="190">
+    		<h1>Contactez <span class="opticodeLogo"></span> !</h1>
+    		<table class="simpleTable">
+    			<tr><th>e-mail</th><td><a href="julien.pilet@opticode.ch">julien.pilet@opticode.ch</a></td></tr>
+    			<tr><th>téléphone</th><td>+41 79 935 28 57</td></tr>
+    			<tr><th>skype</th><td><a href="skype:julienpilet?call">julienpilet</a></td></tr>
+    			<tr><th>adresse</th><td>Julien Pilet, Rue Neuve 6A, 1020 Renens</td></tr>
+    		</table>
     	</section>
     	
     	</div></div>

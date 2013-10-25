@@ -139,7 +139,9 @@ jQuery( function($){
 		this.scrollLeft = 0;
 		this.scrollTop = 0;
 	});
-
+	
+	$(".opticodeLogo").html('<a href="#home">opticod<span class="inverseVideo">e</span>.ch</a>');
+	
 	window.onresize = _.debounce( resizeSections , 20);
 	window.onhashchange = selectSection;
 	window.onresize();	
