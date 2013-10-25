@@ -136,8 +136,6 @@ nav a {
 #content {
   display:block;
   position:absolute;
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
 }
 
 #background {
@@ -145,13 +143,11 @@ nav a {
   background-image: url('../img/circuit.jpg');
   background-repeat: repeat;
   background-size: 256px 256px;
-  transform:translate3d(0px, 0px, -200px);
-  -webkit-transform:translate3d(0px, 0px, -200px);
   position: absolute;
   width: 10000px;
   height: 10000px;
-  left: 0px;
-  top: 0px;
+  left: -100px;
+  top: -100px;
 }
 
 #clipZone {
