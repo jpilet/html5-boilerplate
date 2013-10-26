@@ -140,7 +140,7 @@ nav a {
 
 #background {
   display:block;
-  background-image: url('../img/circuit.jpg');
+  background-image: url('../img/board_blue.jpg');
   background-repeat: repeat;
   background-size: 256px 256px;
   position: absolute;
@@ -221,6 +221,10 @@ table.simpleTable th {
 }
 table.simpleTable th, table.simpleTable td {
 	padding: 0px 10px;
+}
+
+.floatRight {
+	float: right;	
 }
 
 /* ==========================================================================
