@@ -100,6 +100,15 @@ section {
     -webkit-overflow-scrolling: touch; 
     box-shadow: 80px 80px 20px -20px rgba(0,0,0,.4);
     z-index: 10;
+    column-width:200px;
+	-moz-column-width:200px; /* Firefox */
+	-webkit-column-width:200px; /* Safari and Chrome */
+}
+
+section header {
+    column-width: auto;
+	-moz-column-width: auto; /* Firefox */
+	-webkit-column-width: auto; /* Safari and Chrome */
 }
 
 body > header {
@@ -141,6 +150,7 @@ nav a {
 #background {
   display:block;
   background-image: url('../img/board_blue.jpg');
+  /*background-image: url('http://vully.ch/liste-caves-vully-2013-1.jpg');*/
   background-repeat: repeat;
   background-size: 256px 256px;
   position: absolute;
