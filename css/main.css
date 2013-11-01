@@ -91,19 +91,13 @@ textarea {
 section {
 	margin: 0px;
 	background-color: rgba(255,255,255,.9);
-	border-width: 3px;
-	border-style: solid;
-	border-color: black;
-	padding: 8px;
+	padding: 20px;
 	position:absolute;
 	top:0px;
     overflow-y        : auto;
     -webkit-overflow-scrolling: touch; 
-    box-shadow: 80px 80px 20px -20px rgba(0,0,0,.4);
+    box-shadow: 20px 20px 30px 5px rgba(0,0,0,.4);
     z-index: 10;
-    column-width:200px;
-	-moz-column-width:200px; /* Firefox */
-	-webkit-column-width:200px; /* Safari and Chrome */
 }
 
 section header {
@@ -115,9 +109,6 @@ section header {
 body > header {
     line-height: 1;
 	margin: 0px;
-	border-style: solid;
-	border-color: black;
-	border-width: 0px 3px 3px 3px;
 	box-shadow: 10px 10px 20px 0px rgba(0,0,0,.4);
 	position: relative;
 	z-index: 5;
@@ -132,7 +123,7 @@ nav > ul {
 	padding: 0px 0px;
 }
 
-body > header li {
+nav > ul li {
 	display: inline-block;
 	font-family: 'Pixel', sans-serif;
 	font-size: 25px;
@@ -197,7 +188,7 @@ body > header .opticodeLogo {
     font-size: 50px;
     background-color: white;
 }
-body > header li {
+nav > ul li {
 	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #2020BE), color-stop(1, #00009E) );
 	background:-moz-linear-gradient( center top, #2020BE 5%, #00009E 100% );
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#2020BE', endColorstr='#00009E');
@@ -211,7 +202,7 @@ body > header li {
 	padding: 0px 12px;
 	margin: 0px;
 }
-body > header li:hover {
+nav > ul li:hover {
 	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #1e62d0), color-stop(1, #3d94f6) );
 	background:-moz-linear-gradient( center top, #1e62d0 5%, #3d94f6 100% );
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#1e62d0', endColorstr='#3d94f6');
