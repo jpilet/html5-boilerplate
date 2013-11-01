@@ -100,10 +100,10 @@ section {
     z-index: 10;
 }
 
-section header {
-    column-width: auto;
-	-moz-column-width: auto; /* Firefox */
-	-webkit-column-width: auto; /* Safari and Chrome */
+article {
+    column-width: 40ex;
+	-moz-column-width: 40ex; /* Firefox */
+	-webkit-column-width: 40ex; /* Safari and Chrome */	
 }
 
 body > header {
