@@ -98,6 +98,7 @@ section {
     -webkit-overflow-scrolling: touch; 
     box-shadow: 20px 20px 30px 5px rgba(0,0,0,.4);
     z-index: 10;
+    font-family: myriad-pro;
 }
 
 section header {
@@ -162,10 +163,10 @@ nav a {
 }
 
 @font-face {
-    font-family: 'Pixel';
+    font-family: 'myriad-pro';
     font-style: normal;
     font-weight: 400;
-    src: url('FreePixel.ttf') format('truetype');
+    src: url('MyriadPro-Light.otf')
 }
 
 span.opticodeLogo {
