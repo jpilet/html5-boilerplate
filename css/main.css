@@ -102,6 +102,7 @@ section {
 }
 
 article {
+	max-width: 90ex;
     column-width: 40ex;
 	-moz-column-width: 40ex; /* Firefox */
 	-webkit-column-width: 40ex; /* Safari and Chrome */	
@@ -165,30 +166,9 @@ nav a {
 @font-face {
     font-family: 'myriad-pro';
     font-style: normal;
-    font-weight: 400;
     src: url('MyriadPro-Light.otf')
 }
 
-span.opticodeLogo {
-	font-family: 'Pixel', sans-serif;
-    font-weight: normal;
-}
-
-span.opticodeLogo span.inverseVideo {
-	color: #DBCEC8;
-    background-color: #00009E;
-}
-
-span.opticodeLogo a {
-	text-decoration: none;
-	color: inherit;
-}
-
-body > header .opticodeLogo {
-	float:left;
-    font-size: 50px;
-    background-color: white;
-}
 nav > ul li {
 	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #2020BE), color-stop(1, #00009E) );
 	background:-moz-linear-gradient( center top, #2020BE 5%, #00009E 100% );

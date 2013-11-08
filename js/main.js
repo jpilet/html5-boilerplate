@@ -150,9 +150,25 @@ jQuery( function($){
 		this.scrollTop = 0;
 	});
 	
-	$(".opticodeLogo").html('<a href="#home">opticod<span class="inverseVideo">e</span>.ch</a>');
+	//$(".opticodeLogo").html('<a href="#home">opticod<span class="inverseVideo">e</span>.ch</a>');
+	$(".opticodeLogo").html('opticode.ch');
 	
 	window.onresize = _.debounce( resizeSections , 20);
 	window.onhashchange = selectSection;
-	window.onresize();	
+	window.onresize();
+	
+	
+	// Fill the index section
+	var index = "<ul>";
+	$("section").each(function() {
+		var id = $(this).attr("id");
+		if (id != "index") {
+			index += '<li><a href="#' + id + '">' + $(this).find("h1").html() + '</a></li>';
+		}
+	});
+	index += "</ul>";
+	$('#indexContainer').html(index);
+	
+	// Duplicate navigation bar in all sections
+	$("section").prepend($("#home nav"));
 });
