@@ -124,7 +124,7 @@ class Structures_BibTex
      * @var string
      */
     var $htmlstring;
-    var $html_hierarchy = true;
+    var $html_hierarchy = "simple";
     /**
      * Array with the "allowed" entry types
      *
@@ -1194,9 +1194,10 @@ class Structures_BibTex
                     }
 		    $cnt = count($tmparray);
 		    if ($cnt>1) {
-			    $tmparray[$cnt-2] = $tmparray[$cnt-2] . ", and " . $tmparray[$cnt-1];
+			    $tmparray[$cnt-2] = $tmparray[$cnt-2]
+                                . ($cnt > 2 ? ", and " : " and ")
+                                . $tmparray[$cnt-1];
 			    unset($tmparray[$cnt-1]);
-
 		    } 
 		    $authors = join(', ', $tmparray);
                 } else {
@@ -1219,7 +1220,7 @@ class Structures_BibTex
                 $line = str_replace("AUTHORS", $authors, $line);
 		$line = str_replace("CITE", $entry['cite'], $line);
 
-		if ($this->html_hierarchy) {
+		if ($this->html_hierarchy == "full") {
 			if ($type != $prev_type) {
 				$prefix='';
 				if ($prev_date) { 
@@ -1241,7 +1242,14 @@ class Structures_BibTex
 					$prev_date = $year;
 				}
 			}
-		}
+                } else if ($this->html_hierarchy == "simple") {
+			if ($type != $prev_type) {
+				$prefix='';
+				if ($prev_type) $prefix .= "    </ul>\n  </li>\n";
+				$line = $prefix."  <li>".$this->entryTypeName[$type]."\n    <ul class=\"publi-type\">\n    ".$line;
+				$prev_type = $type;
+			}
+                }
 
                 $ret  .= $line;
             } else {

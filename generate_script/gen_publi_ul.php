@@ -10,7 +10,7 @@ if(!$ret) {
     die($ret->getMessage());
 }
 $bibtex->parse();
-$bibtex->htmlstring = "<li><a href=\"publi/CITE.pdf\">TITLE</a><br/>AUTHORS<br/>JOURNAL </li>\n";
+$bibtex->htmlstring = "<li><a href=\"publications/CITE.pdf\">TITLE</a><br/>AUTHORS<br/>JOURNAL </li>\n";
 $bibtex->authorstring = "FIRST LAST";
 
  print $bibtex->html();
