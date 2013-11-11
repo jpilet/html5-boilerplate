@@ -114,6 +114,11 @@ article {
     -webkit-column-gap: 5ex; /* Safari and Chrome */
 	text-align: justify;
 }
+article img {
+	margin: 20px auto;
+	display: block;
+}	
+	
 
 body > header {
     line-height: 1;
