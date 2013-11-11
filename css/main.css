@@ -106,6 +106,7 @@ article {
     column-width: 40ex;
 	-moz-column-width: 40ex; /* Firefox */
 	-webkit-column-width: 40ex; /* Safari and Chrome */	
+	text-align: justify;
 }
 
 body > header {
@@ -208,6 +209,12 @@ table.simpleTable th, table.simpleTable td {
 
 .floatRight {
 	float: right;	
+}
+
+/* Publication list */
+ul.publi-type {
+	list-style-type: none;
+	padding-left: 20px;	
 }
 
 /* ==========================================================================
