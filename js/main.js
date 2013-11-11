@@ -60,11 +60,11 @@ jQuery( function($){
 			"width" : geometry.clipZoneWidth + "px"
 		});
 		
-		geometry.sectionWidth = geometry.clipZoneWidth * .8 - 2*30;
-		geometry.sectionHeight = geometry.clipZoneHeight * .8 - 2*30;
+		geometry.sectionWidth = geometry.clipZoneWidth * .8;
+		geometry.sectionHeight = geometry.clipZoneHeight * .8;
 		$("section").css({
-			"height" : geometry.sectionHeight + "px",
-			"width" : geometry.sectionWidth + "px"
+			"height" : (geometry.sectionHeight - 30) + "px",
+			"width" : (geometry.sectionWidth - 30) + "px"
 		});
 		
 		placeSections();
