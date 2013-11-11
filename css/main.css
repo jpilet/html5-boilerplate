@@ -100,7 +100,7 @@ section {
     box-shadow: 20px 20px 30px 5px rgba(0,0,0,.4);
     z-index: 10;
     font-family: myriad-pro;
-    border-width: 30px;
+    border-width: 20px 50px;
     border-style: solid;
     border-color:  rgba(255,255,255,.0);
 }
@@ -161,7 +161,6 @@ nav a {
 #background {
   display:block;
   background-image: url('../img/pantone-background-1.gif');
-  /*background-image: url('http://vully.ch/liste-caves-vully-2013-1.jpg');*/
   background-repeat: repeat;
   position: absolute;
   width: 10000px;
@@ -254,6 +253,20 @@ ul.publi-entry {
 
 ul.publi-type li {
 	padding-bottom: 1em;
+}
+
+ul.publi-type > li {
+	font-family: 'myriad-pro-bold';
+}
+
+ul.publi-year > li {
+	font-family: 'myriad-pro';
+}
+
+a[href$='.pdf'] {
+	background:url(../img/icon-pdf-file.svg)  center right no-repeat;
+    padding-right:20px;
+    background-size: 13px 17px;
 }
 
 /* ==========================================================================
