@@ -92,6 +92,7 @@ section {
 	margin: 0px;
 	background-color: rgba(255,255,255,.9);
 	padding: 0px;
+	
 	position:absolute;
 	top:0px;
     overflow-y        : auto;
@@ -109,6 +110,9 @@ article {
     column-width: 40ex;
 	-moz-column-width: 40ex; /* Firefox */
 	-webkit-column-width: 40ex; /* Safari and Chrome */	
+	column-gap: 5ex;
+    -moz-column-gap: 5ex; /* Firefox */
+    -webkit-column-gap: 5ex; /* Safari and Chrome */
 	text-align: justify;
 }
 
