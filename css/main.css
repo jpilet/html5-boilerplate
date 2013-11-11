@@ -217,6 +217,18 @@ ul.publi-type {
 	padding-left: 20px;	
 }
 
+ul.publi-year {
+	list-style-type: none;
+}
+
+ul.publi-entry {
+	list-style-type: none;
+}
+
+ul.publi-type li {
+	padding-bottom: 1em;
+}
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */

@@ -124,7 +124,7 @@ class Structures_BibTex
      * @var string
      */
     var $htmlstring;
-    var $html_hierarchy = "simple";
+    var $html_hierarchy = "full";
     /**
      * Array with the "allowed" entry types
      *
