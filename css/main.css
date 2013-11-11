@@ -105,6 +105,10 @@ section {
     border-color:  rgba(255,255,255,.0);
 }
 
+section p {
+	-webkit-margin-before: 0px;
+}
+
 article {
 	max-width: 90ex;
     column-width: 40ex;
