@@ -91,7 +91,7 @@ textarea {
 section {
 	margin: 0px;
 	background-color: rgba(255,255,255,.9);
-	padding: 20px;
+	padding: 0px;
 	position:absolute;
 	top:0px;
     overflow-y        : auto;
@@ -99,6 +99,9 @@ section {
     box-shadow: 20px 20px 30px 5px rgba(0,0,0,.4);
     z-index: 10;
     font-family: myriad-pro;
+    border-width: 30px;
+    border-style: solid;
+    border-color:  rgba(255,255,255,.0);
 }
 
 article {

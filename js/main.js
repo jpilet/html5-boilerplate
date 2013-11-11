@@ -60,8 +60,8 @@ jQuery( function($){
 			"width" : geometry.clipZoneWidth + "px"
 		});
 		
-		geometry.sectionWidth = geometry.clipZoneWidth * .8;
-		geometry.sectionHeight = geometry.clipZoneHeight * .8;
+		geometry.sectionWidth = geometry.clipZoneWidth * .8 - 2*30;
+		geometry.sectionHeight = geometry.clipZoneHeight * .8 - 2*30;
 		$("section").css({
 			"height" : geometry.sectionHeight + "px",
 			"width" : geometry.sectionWidth + "px"
