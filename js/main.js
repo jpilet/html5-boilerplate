@@ -153,7 +153,10 @@ jQuery( function($){
 	//$(".opticodeLogo").html('<a href="#home">opticod<span class="inverseVideo">e</span>.ch</a>');
 	$(".opticodeLogo").html('opticode.ch');
 	
-	window.onresize = _.debounce( resizeSections , 20);
+	window.onresize = _.debounce( function() {
+			previousTranslation = null;
+			resizeSections();
+		} , 20);
 	window.onhashchange = selectSection;
 	window.onresize();
 	
