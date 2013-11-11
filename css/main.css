@@ -122,7 +122,15 @@ article {
 article img {
 	margin: 20px auto;
 	display: block;
-}	
+}
+
+article ul {
+	padding-left: 15px;
+}
+
+article li {
+	padding-bottom: 1ex;
+}
 	
 
 body > header {
@@ -137,7 +145,7 @@ body > header {
 }
 
 nav > ul {
-	display: inline;
+	display: inline-block;
 	margin: 12px 0px;
 	padding: 0px 0px;
 }
