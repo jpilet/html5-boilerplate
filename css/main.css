@@ -107,6 +107,7 @@ section {
 
 section p {
 	-webkit-margin-before: 0px;
+	margin-top: 0px;
 }
 
 article {
@@ -178,10 +179,20 @@ nav a {
   -webkit-perspective: 500px; /* Safari and Chrome */
 }
 
+h1, h2, h3 {
+	font-family: 'myriad-pro-bold';
+}
+
 @font-face {
     font-family: 'myriad-pro';
     font-style: normal;
     src: url('MyriadPro-Regular.otf')
+}
+
+@font-face {
+    font-family: 'myriad-pro-bold';
+    font-style: normal;
+    src: url('MyriadPro-Semibold.otf')
 }
 
 nav > ul li {
