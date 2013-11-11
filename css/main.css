@@ -215,6 +215,8 @@ table.simpleTable th, table.simpleTable td {
 ul.publi-type {
 	list-style-type: none;
 	padding-left: 20px;	
+	padding-top: 10px;
+	padding-bottom; 10px;
 }
 
 /* ==========================================================================
