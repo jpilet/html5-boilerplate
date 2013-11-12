@@ -57,14 +57,25 @@ jQuery( function($){
 		geometry.clipZoneHeight = (height - headerHeight);
 		clipZone.css({
 			"height": geometry.clipZoneHeight + "px",
-			"width" : geometry.clipZoneWidth + "px"
+			"width" : geometry.clipZoneWidth + "px",
 		});
 		
-		geometry.sectionWidth = geometry.clipZoneWidth * .8;
-		geometry.sectionHeight = geometry.clipZoneHeight * .8;
+		// Return a small value if 'size' if significantly smaller than 'normalSize'
+		// if 'size' is about 'normalSize', return normalSize * ratio.
+		// if 'size' is much larger, return a large value.
+		var squareProgressive = function(size, normalSize, ratio) {
+			return (size / normalSize) * (size * ratio);
+		};
+		geometry.sectionWidth = geometry.clipZoneWidth - 2 * squareProgressive(geometry.clipZoneWidth, 800, .07);
+		geometry.sectionHeight = geometry.clipZoneHeight - 2 * squareProgressive(geometry.clipZoneHeight, 800, .07);
+		var border = {
+			width: squareProgressive(geometry.clipZoneWidth, 800, .07),
+			height: squareProgressive(geometry.clipZoneHeight, 800, .07),
+		};
 		$("section").css({
-			"height" : (geometry.sectionHeight - 30) + "px",
-			"width" : (geometry.sectionWidth - 30) + "px"
+			"height" : (geometry.sectionHeight - border.height) + "px",
+			"width" : (geometry.sectionWidth - border.width) + "px",
+			"border-width": border.height + "px " + border.width + "px",
 		});
 		
 		placeSections();
@@ -92,8 +103,8 @@ jQuery( function($){
 		function translationForSection(section) {
 			var pos = sectionPosition(section);
 			return {
-				left: (geometry.clipZoneWidth - geometry.sectionWidth) / 2 - pos.left,
-				top: (geometry.clipZoneHeight - geometry.sectionHeight) / 2 - pos.top,
+				left: (geometry.clipZoneWidth - $(section).outerWidth()) / 2 - pos.left,
+				top: (geometry.clipZoneHeight - $(section).outerHeight()) / 2 - pos.top,
 				z: 0
 			};
 		}
