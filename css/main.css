@@ -284,6 +284,26 @@ a[href$='.pdf'] {
     background-size: 13px 17px;
 }
 
+/* Youtube video list */
+.youtubeIcon iframe {
+	vertical-align: middle;
+	padding-bottom: 10px;
+	padding-right: 10px;
+	float:left;
+}
+
+.youtubeIcon span {
+	display: block;
+	overflow: hidden;
+	min-width: 30ex;
+	max-width: 420px;
+}
+
+div.youtubeIcon {
+	padding-bottom: 2em;
+	overflow: hidden;
+}
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */

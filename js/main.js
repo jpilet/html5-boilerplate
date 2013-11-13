@@ -185,4 +185,11 @@ jQuery( function($){
 	
 	// Duplicate navigation bar in all sections
 	$("section").prepend($("#home nav"));
+	
+	// Format youtube references
+	$(".youtubeIcon").each(function() {
+		$(this).html('<iframe width="420" height="315" src="//www.youtube.com/embed/'
+			+ $(this).attr("data-youtubeid") + '?rel=0&theme=light&color=white" frameborder="0" allowfullscreen></iframe>'
+			+ '<span>' + $(this).html() + '</span>');
+	});
 });
