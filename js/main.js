@@ -90,7 +90,7 @@ jQuery( function($){
 		var angle = $(section).attr("data-angle") * Math.PI / 180.0;
 		var sin = Math.sin(angle);
 		var cos = Math.cos(angle);
-		var r = $(section).attr("data-radius") * 1.5;
+		var r = $(section).attr("data-radius") * 1.6;
 
 		return {
 			left: cos * r * geometry.sectionWidth - (geometry.sectionWidth / 2) + geometry.bounds.width / 2,
@@ -151,6 +151,8 @@ jQuery( function($){
 				"transform": "translate(" + pos.left + "px," + pos.top + "px)"
 			}); 
 		}
+		$("section").css({"z-index" : 0});
+		$(section).css({"z-index": 10});
 		previousTranslation = pos;
 	}
 	
