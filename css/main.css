@@ -152,6 +152,7 @@ nav {
 	position:relative;
 	text-align:right;
 	line-height: 15pt;
+	padding-bottom: 10px;
 }
 
 nav #logo {
@@ -188,7 +189,7 @@ nav a {
 
 #background {
   display:block;
-  background-image: url('../img/pantone-background-1.gif');
+  background-image: url('../img/circuit.jpg');
   background-repeat: repeat;
   position: absolute;
   width: 10000px;
