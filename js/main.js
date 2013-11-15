@@ -123,22 +123,24 @@ jQuery( function($){
 			var anim = Zanimo($("#content")[0]);
 			var animBackground = Zanimo($("#background")[0]);
 			var slowFactor = .5;
+			
+			var animDuration = 2000;
 			if (Modernizr.csstransforms3d) {
 				anim = anim
 					.then(Zanimo.transitionf("transform",
-						"translate3d(" + mid.left + "px," + mid.top + "px, " + mid.z + "px)", 400, "ease-in-out"))
+						"translate3d(" + mid.left + "px," + mid.top + "px, " + mid.z + "px)", animDuration/2, "ease-in-out"))
 					.then(Zanimo.transitionf("transform",
-						"translate3d(" + pos.left + "px," + pos.top + "px, " + pos.z + "px)", 400, "ease-in-out"));
+						"translate3d(" + pos.left + "px," + pos.top + "px, " + pos.z + "px)", animDuration/2, "ease-in-out"));
 				animBackground = animBackground
 					.then(Zanimo.transitionf("transform",
-						"translate3d(" + mid.left * slowFactor + "px," + mid.top * slowFactor + "px, " + mid.z + "px)", 400, "ease-in-out"))
+						"translate3d(" + mid.left * slowFactor + "px," + mid.top * slowFactor + "px, " + mid.z + "px)", animDuration/2, "ease-in-out"))
 					.then(Zanimo.transitionf("transform",
-						"translate3d(" + pos.left * slowFactor + "px," + pos.top * slowFactor + "px, " + pos.z + "px)", 400, "ease-in-out"));
+						"translate3d(" + pos.left * slowFactor + "px," + pos.top * slowFactor + "px, " + pos.z + "px)", animDuration/2, "ease-in-out"));
 				
 			} else {
-				anim = anim.then(Zanimo.transitionf("transform", "translate(" + pos.left + "px," + pos.top + "px)", 800, "ease-in-out"));
+				anim = anim.then(Zanimo.transitionf("transform", "translate(" + pos.left + "px," + pos.top + "px)", animDuration, "ease-in-out"));
 				animBackground = animBackground
-					.then(Zanimo.transitionf("transform", "translate(" + pos.left * slowFactor + "px," + pos.top * slowFactor+ "px)", 800, "ease-in-out"));
+					.then(Zanimo.transitionf("transform", "translate(" + pos.left * slowFactor + "px," + pos.top * slowFactor+ "px)", animDuration, "ease-in-out"));
 			}
 			anim.fail(function() {
 				$("#content").css({
