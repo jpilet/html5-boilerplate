@@ -20,7 +20,6 @@ textarea {
 
 html {
     font-size: 1em;
-    line-height: 1.4;
 }
 
 /*
@@ -148,13 +147,16 @@ body > header {
 nav {
 	display: block;
 	overflow: hidden;
-	font-size: 30pt;
-	letter-spacing: 1px;
-	font-family: "myriad-pro-bold";
+	font-size: 32pt;
+	font-family: "pixel";
+	position:relative;
+	text-align:right;
+	line-height: 15pt;
 }
 
 nav #logo {
 	float: left;
+	padding-bottom: 5pt;
 }
 
 #invert, nav > ul li:hover  {
@@ -163,7 +165,7 @@ nav #logo {
 }
 
 nav > ul {
-	display: block;
+	display: inline-block;
 	overflow: hidden;
 	margin: 0px 0px;
 	padding: 0px 0px;
@@ -229,7 +231,7 @@ h2 {
 @font-face {
     font-family: 'pixel';
     font-style: normal;
-    src: url('cc_red_alert.ttf')
+    src: url('monaco.ttf')
 }
 
 nav > ul li {
