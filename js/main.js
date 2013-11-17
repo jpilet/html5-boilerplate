@@ -1,5 +1,16 @@
 
 jQuery( function($){
+	var activeMenuEntryForSection = {
+		"services": "services",
+		"service-vision": "services",
+		"service-academic": "services",
+		"service-embedded": "services",
+		"service-dev": "services",
+		"service-code-review": "services",
+		"company": "company",
+		"contact": "contact",
+		"index": "index",
+	};
 	var geometry = {
 		sectionWidth: 0,
 		sectionHeight: 0,
@@ -82,6 +93,10 @@ jQuery( function($){
 		selectSection();
 	}
 	
+	function currentSectionName() {
+		return (location.hash ? location.hash: "#home").substring(1);
+	}
+	
 	function currentSection() {
 		return $(location.hash ? location.hash: "#home");
 	}
@@ -111,6 +126,8 @@ jQuery( function($){
 		
 		var section = currentSection();		
 		var pos = translationForSection(section);
+		var previousSection = $("section.selectedSection");
+	  section.addClass("selectedSection");
 
 		if (previousTranslation && Modernizr.cssanimations) {
 
@@ -135,27 +152,37 @@ jQuery( function($){
 					.then(Zanimo.transitionf("transform",
 						"translate3d(" + mid.left * slowFactor + "px," + mid.top * slowFactor + "px, " + mid.z + "px)", animDuration/2, "ease-in-out"))
 					.then(Zanimo.transitionf("transform",
-						"translate3d(" + pos.left * slowFactor + "px," + pos.top * slowFactor + "px, " + pos.z + "px)", animDuration/2, "ease-in-out"));
+						"translate3d(" + pos.left * slowFactor + "px," + pos.top * slowFactor + "px, " + pos.z + "px)", animDuration/2, "ease-in-out"))
+          .then(function() { previousSection.removeClass("selectedSection"); });
 				
 			} else {
 				anim = anim.then(Zanimo.transitionf("transform", "translate(" + pos.left + "px," + pos.top + "px)", animDuration, "ease-in-out"));
 				animBackground = animBackground
-					.then(Zanimo.transitionf("transform", "translate(" + pos.left * slowFactor + "px," + pos.top * slowFactor+ "px)", animDuration, "ease-in-out"));
+					.then(Zanimo.transitionf("transform",
+                                   "translate(" + pos.left * slowFactor + "px," + pos.top * slowFactor+ "px)",
+                                   animDuration, "ease-in-out"))
+          .then(function() { previousSection.removeClass("selectedSection"); });
 			}
 			anim.fail(function() {
 				$("#content").css({
 					"transform": "translate(" + pos.left + "px," + pos.top + "px)"
-				}); 		
+				});
+				previousSection.removeClass("selectedSection");
 			});
 		} else {
 			// Initial selection: no animation, or no animation support.
 			$("#content").css({
 				"transform": "translate(" + pos.left + "px," + pos.top + "px)"
-			}); 
+			});
+			previousSection.removeClass("selectedSection");
 		}
-		$("section").css({"z-index" : 0});
-		$(section).css({"z-index": 10});
 		previousTranslation = pos;
+		
+		// Activate the menu.
+		$(".activeMenuItem").removeClass("activeMenuItem");
+		if (currentSectionName() in activeMenuEntryForSection) {
+			$('nav a[href="#' + activeMenuEntryForSection[currentSectionName()] + '"]').parent().addClass("activeMenuItem");
+		}
 	}
 	
 	// Browsers try to scroll to the correct location.

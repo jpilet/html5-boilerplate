@@ -104,6 +104,18 @@ section {
     border-color:  rgba(255,255,255,.0);
 }
 
+.heavy {
+	display: none;
+}
+
+section.selectedSection *.heavy{
+	display: block;
+}
+
+section.selectedSection {
+	z-index: 10;
+}
+
 section p {
 	-webkit-margin-before: 0px;
 	margin-top: 0px;
@@ -160,7 +172,7 @@ nav #logo {
 	padding-bottom: 5pt;
 }
 
-#invert, nav > ul li:hover  {
+#invert, nav > ul li:hover, *.activeMenuItem {
 	color: #f1ec97;
 	background-color:#00009E;
 }
