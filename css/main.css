@@ -120,6 +120,7 @@ section p {
 	-webkit-margin-before: 0px;
 	margin-top: 0px;
 	max-width: 60ex;
+	min-width: 20ex;
 }
 
 article {
@@ -176,6 +177,11 @@ nav #logo {
 #invert, nav > ul li:hover, *.activeMenuItem {
 	color: #f1ec97;
 	background-color:#00009E;
+}
+
+#invert {
+	display:inline-block;
+	padding: 4px 0px;
 }
 
 nav > ul {
@@ -263,10 +269,14 @@ a {
 }
 
 table.simpleTable th {
-	text-align:right;
+	text-align:left;
+	font-weight:normal;
 }
-table.simpleTable th, table.simpleTable td {
-	padding: 0px 10px;
+table.simpleTable td {
+	text-align:left;
+}
+table.simpleTable td {
+	padding: 10px 10px;
 }
 
 .floatRight {
@@ -325,6 +335,19 @@ a[href$='.pdf'] {
 div.youtubeIcon {
 	padding-bottom: 2em;
 	overflow: hidden;
+}
+
+div.imageLegende {
+	display:inline-block;
+	width: 30ex;
+	text-align:center;
+	padding-right: 1ex;
+	padding-top: 2em;
+}
+
+div.imageLegende img {
+	display: block;
+	padding-bottom: 1em;
 }
 
 /* ==========================================================================

@@ -7,7 +7,7 @@ jQuery( function($){
 		"service-embedded": "services",
 		"service-dev": "services",
 		"service-code-review": "services",
-		"company": "company",
+		"video": "video",
 		"contact": "contact",
 		"index": "index",
 	};
