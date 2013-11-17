@@ -74,8 +74,9 @@ jQuery( function($){
 		// Return a small value if 'size' if significantly smaller than 'normalSize'
 		// if 'size' is about 'normalSize', return normalSize * ratio.
 		// if 'size' is much larger, return a large value.
+		// We make sur it is an integer value, to avoid translating text of a fraction of a pixel.
 		var squareProgressive = function(size, normalSize, ratio) {
-			return (size / normalSize) * (size * ratio);
+			return Math.floor((size / normalSize) * (size * ratio));
 		};
 		geometry.sectionWidth = geometry.clipZoneWidth - 2 * squareProgressive(geometry.clipZoneWidth, 800, .07);
 		geometry.sectionHeight = geometry.clipZoneHeight - 2 * squareProgressive(geometry.clipZoneHeight, 800, .07);
@@ -108,8 +109,8 @@ jQuery( function($){
 		var r = $(section).attr("data-radius") * 1.6;
 
 		return {
-			left: cos * r * geometry.sectionWidth - (geometry.sectionWidth / 2) + geometry.bounds.width / 2,
-			top: sin * r * geometry.sectionHeight - (geometry.sectionHeight / 2) + geometry.bounds.height / 2
+			left: Math.floor(cos * r * geometry.sectionWidth - (geometry.sectionWidth / 2) + geometry.bounds.width / 2),
+			top: Math.floor(sin * r * geometry.sectionHeight - (geometry.sectionHeight / 2) + geometry.bounds.height / 2)
 		};
 	}
 	
