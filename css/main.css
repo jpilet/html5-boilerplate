@@ -119,6 +119,7 @@ section.selectedSection {
 section p {
 	-webkit-margin-before: 0px;
 	margin-top: 0px;
+	max-width: 60ex;
 }
 
 article {
