@@ -1,4 +1,11 @@
-
+/* Welcome to the source code of opticode.ch.
+ * Have fun reading them. I got inspired by many sites, for example http://demojs.org.
+ * Stackoverflow.com is always a very useful source of information.
+ * 
+ * Feel free to copy and re-use what you find here. Comments are welcome.
+ * Thank you for your interest.
+ * Julien Pilet - julien.pilet@opticode.ch
+ */
 jQuery( function($){
 	var activeMenuEntryForSection = {
 		"services": "services",
