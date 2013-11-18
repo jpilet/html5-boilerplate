@@ -341,13 +341,24 @@ div.imageLegende {
 	display:inline-block;
 	width: 30ex;
 	text-align:center;
-	padding-right: 1ex;
+	padding-right: .2ex;
 	padding-top: 2em;
 }
 
 div.imageLegende img {
 	display: block;
 	padding-bottom: 1em;
+}
+
+div.fixedColumnContainer {
+	text-align: justify;
+}
+
+/* Fill the line to force "justification" */
+div.fixedColumnContainer:after {
+  content: "";
+  display: inline-block;
+  width: 100%;
 }
 
 /* ==========================================================================
