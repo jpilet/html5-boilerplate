@@ -8,7 +8,7 @@
  */
 jQuery( function($){
 	var activeMenuEntryForSection = {
-		"services": "services",
+		"home": "home",
 		"service-vision": "services",
 		"service-academic": "services",
 		"service-embedded": "services",
@@ -94,7 +94,8 @@ jQuery( function($){
 		$("section").css({
 			"height" : (geometry.sectionHeight - border.height) + "px",
 			"width" : (geometry.sectionWidth - border.width) + "px",
-			"border-width": border.height + "px " + border.width + "px",
+			"border-width": border.height + "px 0px " + border.height + "px " + border.width + "px",
+			"padding-right": border.width + "px",
 		});
 		
 		placeSections();
@@ -189,7 +190,7 @@ jQuery( function($){
 		// Activate the menu.
 		$(".activeMenuItem").removeClass("activeMenuItem");
 		if (currentSectionName() in activeMenuEntryForSection) {
-			$('nav a[href="#' + activeMenuEntryForSection[currentSectionName()] + '"]').parent().addClass("activeMenuItem");
+			$('nav ul a[href="#' + activeMenuEntryForSection[currentSectionName()] + '"]').parent().addClass("activeMenuItem");
 		}
 	}
 	

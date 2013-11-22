@@ -341,13 +341,17 @@ div.imageLegende {
 	display:inline-block;
 	width: 30ex;
 	text-align:center;
-	padding-right: .2ex;
+	padding-right: 2ex;
 	padding-top: 2em;
 }
 
 div.imageLegende img {
 	display: block;
 	padding-bottom: 1em;
+}
+
+div.imageLegende a {
+	text-decoration:none;
 }
 
 div.fixedColumnContainer {
