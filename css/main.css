@@ -20,7 +20,6 @@ textarea {
 
 html {
     font-size: 1em;
-    line-height: 1.4;
 }
 
 /*
@@ -91,33 +90,66 @@ textarea {
 section {
 	margin: 0px;
 	background-color: rgba(255,255,255,.9);
-	border-width: 3px;
-	border-style: solid;
-	border-color: black;
-	padding: 8px;
+	padding: 0px;
+	
 	position:absolute;
 	top:0px;
     overflow-y        : auto;
     -webkit-overflow-scrolling: touch; 
-    box-shadow: 80px 80px 20px -20px rgba(0,0,0,.4);
+    box-shadow: 20px 20px 30px 5px rgba(0,0,0,.4);
     z-index: 10;
-    column-width:200px;
-	-moz-column-width:200px; /* Firefox */
-	-webkit-column-width:200px; /* Safari and Chrome */
+    font-family: myriad-pro;
+    border-width: 20px 50px;
+    border-style: solid;
+    border-color:  rgba(255,255,255,.0);
 }
 
-section header {
-    column-width: auto;
-	-moz-column-width: auto; /* Firefox */
-	-webkit-column-width: auto; /* Safari and Chrome */
+.heavy {
+	display: none;
 }
+
+section.selectedSection *.heavy{
+	display: block;
+}
+
+section.selectedSection {
+	z-index: 10;
+}
+
+section p {
+	-webkit-margin-before: 0px;
+	margin-top: 0px;
+	max-width: 60ex;
+	min-width: 20ex;
+}
+
+article {
+    column-width: 40ex;
+	-moz-column-width: 40ex; /* Firefox */
+	-webkit-column-width: 40ex; /* Safari and Chrome */	
+	column-gap: 5ex;
+    -moz-column-gap: 5ex; /* Firefox */
+    -webkit-column-gap: 5ex; /* Safari and Chrome */
+	text-align: justify;
+}
+article img {
+	margin: 20px auto;
+	display: block;
+}
+
+article ul {
+	padding-left: 15px;
+}
+
+article li {
+	padding-bottom: 1ex;
+	text-align: left;
+}
+	
 
 body > header {
     line-height: 1;
 	margin: 0px;
-	border-style: solid;
-	border-color: black;
-	border-width: 0px 3px 3px 3px;
 	box-shadow: 10px 10px 20px 0px rgba(0,0,0,.4);
 	position: relative;
 	z-index: 5;
@@ -126,16 +158,42 @@ body > header {
 	background-color: #00009E;
 }
 
+nav {
+	display: block;
+	overflow: hidden;
+	font-size: 32pt;
+	font-family: "pixel";
+	position:relative;
+	text-align:right;
+	line-height: 15pt;
+	padding-bottom: 30px;
+}
+
+nav #logo {
+	float: left;
+	padding-bottom: 5pt;
+}
+
+#invert, nav > ul li:hover, *.activeMenuItem {
+	color: #f1ec97;
+	background-color:#00009E;
+}
+
+#invert {
+	display:inline-block;
+	padding: 4px 0px;
+}
+
 nav > ul {
-	display: inline;
-	margin: 12px 0px;
+	display: inline-block;
+	overflow: hidden;
+	margin: 0px 0px;
 	padding: 0px 0px;
 }
 
-body > header li {
+nav > ul li {
 	display: inline-block;
-	font-family: 'Pixel', sans-serif;
-	font-size: 25px;
+	font-size: 20pt;
 }
 
 nav a {
@@ -150,10 +208,8 @@ nav a {
 
 #background {
   display:block;
-  background-image: url('../img/board_blue.jpg');
-  /*background-image: url('http://vully.ch/liste-caves-vully-2013-1.jpg');*/
+  background-image: url('../img/circuit.jpg');
   background-repeat: repeat;
-  background-size: 256px 256px;
   position: absolute;
   width: 10000px;
   height: 10000px;
@@ -170,57 +226,42 @@ nav a {
   -webkit-perspective: 500px; /* Safari and Chrome */
 }
 
+h1, h2, h3 {
+	font-family: 'myriad-pro-bold';
+}
+
+h2 {
+	margin-top: 1.2em;
+	border-style: solid;
+	border-width: 0px 0px 1px 0px;
+}
+
 @font-face {
-    font-family: 'Pixel';
+    font-family: 'myriad-pro';
     font-style: normal;
-    font-weight: 400;
-    src: url('FreePixel.ttf') format('truetype');
+    src: url('MyriadPro-Regular.otf')
 }
 
-span.opticodeLogo {
-	font-family: 'Pixel', sans-serif;
-    font-weight: normal;
+@font-face {
+    font-family: 'myriad-pro-bold';
+    font-style: normal;
+    src: url('MyriadPro-Semibold.otf')
 }
 
-span.opticodeLogo span.inverseVideo {
-	color: #DBCEC8;
-    background-color: #00009E;
+@font-face {
+    font-family: 'pixel';
+    font-style: normal;
+    src: url('monaco.ttf')
 }
 
-span.opticodeLogo a {
-	text-decoration: none;
-	color: inherit;
-}
-
-body > header .opticodeLogo {
-	float:left;
-    font-size: 50px;
-    background-color: white;
-}
-body > header li {
-	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #2020BE), color-stop(1, #00009E) );
-	background:-moz-linear-gradient( center top, #2020BE 5%, #00009E 100% );
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#2020BE', endColorstr='#00009E');
-	background-color:#00009E;
+nav > ul li {
 	text-indent:0;
 	border: 2px solid 3030CE;
 	display:inline-block;
-	color:#DBCEC8;
 	text-decoration:none;
 	text-align:center;
 	padding: 0px 12px;
 	margin: 0px;
-}
-body > header li:hover {
-	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #1e62d0), color-stop(1, #3d94f6) );
-	background:-moz-linear-gradient( center top, #1e62d0 5%, #3d94f6 100% );
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#1e62d0', endColorstr='#3d94f6');
-	background-color:#1e62d0;
-}
-
-body > header li:active {
-	position:relative;
-	top:1px;
 }
 
 a {
@@ -228,14 +269,100 @@ a {
 }
 
 table.simpleTable th {
-	text-align:right;
+	text-align:left;
+	font-weight:normal;
 }
-table.simpleTable th, table.simpleTable td {
-	padding: 0px 10px;
+table.simpleTable td {
+	text-align:left;
+}
+table.simpleTable td {
+	padding: 10px 10px;
 }
 
 .floatRight {
 	float: right;	
+}
+
+/* Publication list */
+ul.publi-type {
+	list-style-type: none;
+	padding-left: 20px;	
+	padding-top: 10px;
+	padding-bottom; 10px;
+}
+
+ul.publi-year {
+	list-style-type: none;
+}
+
+ul.publi-entry {
+	list-style-type: none;
+}
+
+ul.publi-type li {
+	padding-bottom: 1em;
+}
+
+ul.publi-type > li {
+	font-family: 'myriad-pro-bold';
+}
+
+ul.publi-year > li {
+	font-family: 'myriad-pro';
+}
+
+a[href$='.pdf'] {
+	background:url(../img/icon-pdf-file.svg)  center right no-repeat;
+    padding-right:20px;
+    background-size: 13px 17px;
+}
+
+/* Youtube video list */
+.youtubeIcon iframe {
+	vertical-align: middle;
+	padding-bottom: 10px;
+	padding-right: 20px;
+	float:left;
+}
+
+.youtubeIcon span {
+	display: block;
+	overflow: hidden;
+	min-width: 30ex;
+	max-width: 420px;
+}
+
+div.youtubeIcon {
+	padding-bottom: 2em;
+	overflow: hidden;
+}
+
+div.imageLegende {
+	display:inline-block;
+	width: 30ex;
+	text-align:center;
+	padding-right: 2ex;
+	padding-top: 2em;
+}
+
+div.imageLegende img {
+	display: block;
+	padding-bottom: 1em;
+}
+
+div.imageLegende a {
+	text-decoration:none;
+}
+
+div.fixedColumnContainer {
+	text-align: justify;
+}
+
+/* Fill the line to force "justification" */
+div.fixedColumnContainer:after {
+  content: "";
+  display: inline-block;
+  width: 100%;
 }
 
 /* ==========================================================================

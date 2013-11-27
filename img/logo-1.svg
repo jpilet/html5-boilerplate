@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+	<!ENTITY ns_flows "http://ns.adobe.com/Flows/1.0/">
+]>
+<svg version="1.1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 x="0px" y="0px" width="215px" height="46px" viewBox="-3.844 -3.566 215 46" enable-background="new -3.844 -3.566 215 46"
+	 xml:space="preserve">
+<defs>
+</defs>
+<rect x="67.437" fill="#0000C5" width="19.737" height="40.48"/>
+<path d="M13.851,28.631H2.75v-2.8H0V14.73h2.75v-2.75h11.101v2.75h2.8v11.101h-2.8V28.631z M11.101,25.831V14.73H5.55v11.101H11.101
+	z"/>
+<path d="M27.75,28.631v5.55h-5.55V11.98H36.05v2.75h2.8v11.101h-2.8v2.8H27.75z M27.75,14.73v11.101h5.55V14.73H27.75z"/>
+<path d="M51.299,11.98h2.8v2.75h-2.8v13.901h-5.55V14.73h-2.75v-2.75h2.75V6.43h5.55V11.98z"/>
+<path d="M63.849,6.43v2.75h-5.55V6.43H63.849z M58.298,11.98h5.55v16.651h-5.55V11.98z"/>
+<path fill="#FFFFE3" d="M73.648,25.831h-2.75V14.73h2.75v-2.75h11.101v5.55h-2.75v-2.8h-5.55v11.101h5.55v-2.75h2.75v2.75h-2.75v2.8
+	h-8.351V25.831z"/>
+<path d="M104.648,28.631H93.547v-2.8h-2.75V14.73h2.75v-2.75h11.101v2.75h2.8v11.101h-2.8V28.631z M101.898,25.831V14.73h-5.55
+	v11.101H101.898z"/>
+<path d="M124.097,11.98V6.43h5.55v22.201h-13.901v-2.8h-2.75V14.73h2.75v-2.75H124.097z M124.097,25.831V14.73h-5.55v11.101H124.097
+	z"/>
+<path d="M137.946,25.831h-2.75V14.73h2.75v-2.75h11.101v2.75h2.8v2.8h-2.8v2.75h-5.55v2.8h-2.75v2.75h8.3v-2.75h2.8v2.75h-2.8v2.8
+	h-11.101V25.831z M140.746,20.28h2.75v-2.75h2.8v-2.8h-5.55V20.28z"/>
+<path d="M159.846,23.081h5.55v5.55h-5.55V23.081z"/>
+<path d="M176.496,25.831h-2.751V14.73h2.751v-2.75h11.101v5.55h-2.751v-2.8h-5.55v11.101h5.55v-2.75h2.751v2.75h-2.751v2.8h-8.35
+	V25.831z"/>
+<path d="M192.645,6.43h5.551v8.3h2.75v-2.75h5.551v2.75h2.8v13.901h-5.551V14.73h-2.8v2.8h-2.75v11.101h-5.551V6.43z"/>
+</svg>
