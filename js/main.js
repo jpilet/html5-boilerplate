@@ -208,7 +208,10 @@ jQuery( function($){
 			previousTranslation = null;
 			resizeSections();
 		} , 20);
-	window.onhashchange = selectSection;
+  window.onhashchange = function() {
+    ga('send', 'pageview', {location: location.pathname + location.hash});
+    selectSection();
+  };
 	window.onresize();
 	
 	

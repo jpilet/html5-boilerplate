@@ -16,8 +16,8 @@ rsync -ar \
     --exclude ".git*" \
     --exclude ".DS_Store" \
     --exclude ".project" \
-    "${ROOT}" "${TMP}"
+    "${ROOT}/"* "${TMP}"
 
-ncftpput -z -R opticode www "${TMP}/opticode.ch/"*
+ncftpput -z -R opticode www "${TMP}/"*
 
 rm -fR "${TMP}"
