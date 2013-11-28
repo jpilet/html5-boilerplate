@@ -1,7 +1,6 @@
 <?php
 require_once('BibTex.php');
 
-
 $bibtex = new Structures_BibTex();
 
 //Loading and parsing the file example.bib
@@ -13,5 +12,4 @@ $bibtex->parse();
 $bibtex->htmlstring = "<li><a href=\"publications/CITE.pdf\">TITLE</a><br/>AUTHORS<br/>JOURNAL </li>\n";
 $bibtex->authorstring = "FIRST LAST";
 
- print $bibtex->html();
 ?>
