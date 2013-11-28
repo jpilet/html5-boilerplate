@@ -1,5 +1,26 @@
 <?php
 require('generate_script/gen_publi_ul.php');
+
+if (substr($argv[1], 0, 2) == "l=") {
+    $LANG= substr($argv[1], 2);
+} else {
+    $LANG = $_GET["l"];
+}
+
+// We support only French and English. Default is English.
+if ($LANG != "fr") {
+  $LANG = "en";
+}
+
+function tr($fr, $en) {
+    global $LANG;
+
+    switch ($LANG) {
+        case 'fr': echo $fr; break;
+        default: echo $en; break;
+    }
+}
+
 ?>
 <!DOCTYPE html>
 <!-- Welcome to the sources of opticode.ch. Have fun !
