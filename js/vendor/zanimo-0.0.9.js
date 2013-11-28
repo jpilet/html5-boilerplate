@@ -78,7 +78,7 @@
             for (var p in _prefixed)
                 _prefixed[p] = _prefix ? "-" + _prefix + "-" + p : p;
 
-            _transition = _prefix ? _prefix + "-" + _transition : _transition
+            _transition = _prefix ? _prefix + "-" + _transition : _transition;
             _transition = _norm(_transition);
             _dummy = doc.createElement("div");
             _dummyTransition = _normValue(_dummyTransition);

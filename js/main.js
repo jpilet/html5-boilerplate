@@ -103,11 +103,11 @@ jQuery( function($){
 	}
 	
 	function currentSectionName() {
-		return (location.hash ? location.hash: "#home").substring(1);
+		return (location.hash && location.hash != "" ? location.hash: "#home").substring(1);
 	}
 	
 	function currentSection() {
-		return $(location.hash ? location.hash: "#home");
+		return $(location.hash && location.hash != "" ? location.hash: "#home");
 	}
 	
 	function sectionPosition(section) {
@@ -136,6 +136,12 @@ jQuery( function($){
 		var section = currentSection();		
 		var pos = translationForSection(section);
 		var previousSection = $("section.selectedSection");
+		
+		if (previousTranslation && section[0] === previousSection[0]) {
+		  // nothing to do.
+		  return;
+		}
+		
 	  section.addClass("selectedSection");
 
 		if (previousTranslation && Modernizr.cssanimations) {
@@ -150,18 +156,20 @@ jQuery( function($){
 			var animBackground = Zanimo($("#background")[0]);
 			var slowFactor = .5;
 			
-			var animDuration = 2000;
+			var animDuration = 1400;
+			var easingIn = 'cubic-bezier(0.630, 0.005, 0.755, 0.995)';
+			var easingOut = 'cubic-bezier(0.145, 0.000, 0.475, 1.000)';
 			if (Modernizr.csstransforms3d) {
 				anim = anim
 					.then(Zanimo.transitionf("transform",
-						"translate3d(" + mid.left + "px," + mid.top + "px, " + mid.z + "px)", animDuration/2, "ease-in-out"))
+						"translate3d(" + mid.left + "px," + mid.top + "px, " + mid.z + "px)", animDuration/2, easingIn))
 					.then(Zanimo.transitionf("transform",
-						"translate3d(" + pos.left + "px," + pos.top + "px, " + pos.z + "px)", animDuration/2, "ease-in-out"));
+						"translate3d(" + pos.left + "px," + pos.top + "px, " + pos.z + "px)", animDuration/2, easingOut));
 				animBackground = animBackground
 					.then(Zanimo.transitionf("transform",
-						"translate3d(" + mid.left * slowFactor + "px," + mid.top * slowFactor + "px, " + mid.z + "px)", animDuration/2, "ease-in-out"))
+						"translate3d(" + mid.left * slowFactor + "px," + mid.top * slowFactor + "px, " + mid.z + "px)", animDuration/2, easingIn))
 					.then(Zanimo.transitionf("transform",
-						"translate3d(" + pos.left * slowFactor + "px," + pos.top * slowFactor + "px, " + pos.z + "px)", animDuration/2, "ease-in-out"))
+						"translate3d(" + pos.left * slowFactor + "px," + pos.top * slowFactor + "px, " + pos.z + "px)", animDuration/2, easingOut))
           .then(function() { previousSection.removeClass("selectedSection"); });
 				
 			} else {
