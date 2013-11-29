@@ -47,7 +47,7 @@ function tr($fr, $en) {
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
   ga('create', 'UA-45949752-1', 'opticode.ch');
-  ga('send', 'pageview');
+  ga('send', 'pageview', window.location.pathname + window.location.search + window.location.hash);
     </script>
     <body>
     	<div id="clipZone"><div id="background"></div><div id="content">
