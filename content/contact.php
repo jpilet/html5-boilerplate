@@ -14,7 +14,7 @@
         <tr><th>adresse</th><td>Julien Pilet<br/>Rue Neuve 6A<br/>1020 Renens<br/>Suisse</td></tr>
     </table>
 <?php } else { ?>
-    <p>opticode.ch is a swiss company founded by Julien Pilet in 2013.</p>
+    <p>opticode.ch is a Swiss company founded by Julien Pilet in 2013.</p>
 
     <table class="simpleTable">
         <tr><th>e-mail</th><td><a href="mailto:julien.pilet@opticode.ch">julien.pilet@opticode.ch</a></td></tr>
