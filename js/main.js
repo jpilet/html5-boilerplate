@@ -217,7 +217,10 @@ jQuery( function($){
 			resizeSections();
 		} , 20);
   window.onhashchange = function() {
-    ga('send', 'pageview', {location: location.pathname + location.hash});
+    ga('send', 'page', {
+      page: window.location.protocol + '//' + window.location.hostname +
+            window.location.pathname + window.location.search + location.hash
+    });
     selectSection();
   };
 	window.onresize();
