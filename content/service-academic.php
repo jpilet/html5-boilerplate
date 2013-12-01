@@ -28,15 +28,15 @@
         </header>
 <article>
         <p><span class="opticodeLogo"></span> provides scientific consulting
-        services in domains of computer vision, computer science and PCB
+        services in various fields such as computer vision, computer science, or PCB
         design.
         </p>
                 
         <p><span class="opticodeLogo"></span> can also help your company to
-        setup state-supported academic collaborations. Here's a typical
+        set up state-supported academic collaborations. Here is a typical
         collaboration example: the Commission for Technology and Innovation
-        (CTI) funds one or two positions in a research institution such as EPFL.
-        The partner company pledge to invest the same resources in the project.
+        (CTI) supports one or two positions in a research institution such as EPFL.
+        The partner company pledges to invest the same resources in the project.
         The company can exploit research results for its products.
         </p>
         <p>Interested ? Just <a href="#contact">contact us</a>!</p>

@@ -1,5 +1,4 @@
 <?php
-require('generate_script/gen_publi_ul.php');
 
 if (substr($argv[1], 0, 2) == "l=") {
     $LANG= substr($argv[1], 2);
@@ -21,6 +20,8 @@ function tr($fr, $en) {
     }
 }
 
+require('generate_script/gen_publi_ul.php');
+
 ?>
 <!DOCTYPE html>
 <!-- Welcome to the sources of opticode.ch. Have fun !
@@ -38,6 +39,7 @@ function tr($fr, $en) {
 
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
     <script>

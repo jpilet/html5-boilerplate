@@ -5,6 +5,13 @@
                 </ul><ul>
                         <li><a href="#contact">contact</a></li>
                 </ul>
+                <ul>
+<?php if($LANG == "fr") { ?>
+                <li><a href="index_en.html#home"><img src="img/en.png"/></a></li>
+<?php } else { ?>
+                <li><a href="index_fr.html#home"><img src="img/fr.png"/></a></li>
+<?php } ?>
+</ul>
         </nav>
         
 <?php if($LANG == "fr") { ?>
@@ -33,7 +40,7 @@
                 ><div class="imageLegende"><a href="#service-embedded"><img width="100%" src="img/armonie.png"/>
                                 Embedded systems</a></div>
                         <div class="imageLegende"><a href="#service-dev"><img width="100%" src="img/code.png"/>
-                                High-level software development</a></div>
+                                Advanced software development</a></div>
                         <div class="imageLegende"><a href="#service-vision"><img width="100%" src="img/paper.jpg"/>
                                 Computer vision</a></div>
                         <div class="imageLegende"><a href="#service-code-review"><img width="100%" src="img/codereview.png"/>

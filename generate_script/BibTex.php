@@ -153,6 +153,7 @@ class Structures_BibTex
      */
     function Structures_BibTex($options = array())
     {
+    global $LANG;
         $this->_delimiters     = array('"'=>'"',
                                         '{'=>'}');
         $this->data            = array();
@@ -178,11 +179,20 @@ class Structures_BibTex
         }
         $this->rtfstring         = 'AUTHORS, "{\b TITLE}", {\i JOURNAL}, YEAR';
         $this->htmlstring        = 'AUTHORS, "<strong>TITLE</strong>", <em>JOURNAL</em>, YEAR<br />';
+
+        if ($LANG == "fr") {
+$this->entryTypeName = array(
+"article" => "Articles de revues scientifiques",
+"inproceedings" => "Articles de conférences",
+"phdthesis" => "Thèse de doctorat");
+        
+        } else {
 	$this->entryTypeName = array(
 			"article" => "Journal Papers",
 			"inproceedings" => "Conference Papers",
-			"phdthesis" => "PhD Thesis"
-			);
+			"phdthesis" => "PhD Thesis");
+		        }
+	
         $this->allowedEntryTypes = array(
             'article' => 8,
             'book',

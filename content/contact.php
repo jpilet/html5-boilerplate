@@ -4,7 +4,7 @@
     </header>
     <img width="220px" style="float:right" src="img/photo_julien.jpg"/>
 
-<?php if ($LANG == fr) { ?>
+<?php if ($LANG == "fr") { ?>
     <p>opticode.ch est une SàRL fondée par Julien Pilet en 2013.</p>
         
     <table class="simpleTable">

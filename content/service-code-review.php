@@ -20,7 +20,7 @@
 <?php } else { ?>
         <h2>What is code review?</h2>
         <article>
-        <p>Code review is a fantastic tool yielding massive quality improvements
+        <p>Code review is a fantastic tool that enables massive quality improvements
         on code written by a development team.</p>
         <p>The concept is simple: write code for your colleagues rather than for
         the machine. In practice, tools such as gerrit code review or review
@@ -49,18 +49,18 @@
 <?php } else { ?>
         <h2>Code review benefits</h2>
         <article>
-        <p>When optimizing code for human understanding rather than machine
+        <p>When code is optimized for human understanding rather than machine
         execution, benefits are immediate:</p>
         <ul>
             <li>The code is readable and thus easier to maintain;</li>
-            <li>The code exposes fewer bugs, because some will be caught during code review;</li>
+            <li>The code exposes fewer bugs, because many of them get caught during code review;</li>
             <li>The reviewer learns from the author when reviewing a
             particularly smart piece of code;</li>
-            <li>The author learns from the reviewer when he or she proposes a
-            better way of solving the problem;</li>
-            <li>The code follows style defined by the team. It is homogeneous
+            <li>The author learns from the reviewer when he or she suggests a
+            better way to solve the problem;</li>
+            <li>The code follows the style defined by the team. As a result, the code remains homogeneous
             and easier to read;</li>
-            <li>Team members learn about their colleague works.</li>
+            <li>Team members keep each other up to date, making it easier for a developer to use and maintain code written by a colleague.</li>
         </ul>
         </article>
 <?php } ?>
@@ -86,23 +86,21 @@
         </ul>
         </article>
 <?php } else { ?>
-        <h2><span class="opticodeLogo"></span> code review services en matière de relecture de
-        code</h2>
+        <h2><span class="opticodeLogo"></span> code review services</h2>
         <article>
         <p><span class="opticodeLogo"></span> helps your team getting started
         with code review, in multiple steps:
         <ul>
-            <li>An expert, former developer at Google, meet your team and
-            analyse its work methods;</li>
-            <li>Your team determines, with <span class="opticodeLogo"></span>
-            advise, a work method that matches precisely your specific
-            needs;</li>
-            <li><span class="opticodeLogo"></span> setup the necessary software
+            <li>An expert, former developer at Google, meets your team members and
+            analyzes their work methods;</li>
+            <li><span class="opticodeLogo"></span> helps your team to determine
+            a work method that meets its specific needs;</li>
+            <li><span class="opticodeLogo"></span> sets up the necessary software
             tools;</li>
             <li><span class="opticodeLogo"></span> presents the new work method
-            to the full team;</li>
-            <li>We supervise the developers' first steps while they get used to
-            code reviews. The team continues to work on their current tasks, avoiding delays.</li>
+            to the whole team;</li>
+            <li><span class="opticodeLogo"></span> supervises the developers' first steps while they are getting used to
+            code reviews. The team members continue to work on their current tasks, avoiding delays.</li>
         </ul>
         </article>
 <?php } ?>
@@ -110,6 +108,6 @@
 <?php if ($LANG == "fr") { ?>
         <p><a href="#contact">Contactez-nous pour plus d'informations!</a></p>
 <?php } else { ?>
-        <p><a href="#contact">Contact-us for more information!</a></p>
+        <p><a href="#contact">Contact us for more information!</a></p>
 <?php } ?>
 </section>
