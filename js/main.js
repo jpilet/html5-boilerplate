@@ -102,12 +102,18 @@ jQuery( function($){
 		selectSection();
 	}
 	
-	function currentSectionName() {
-		return (location.hash && location.hash != "" ? location.hash: "#home").substring(1);
+	// Returns an array with: full location hash, section name, section subpath.
+	function parseLocationHash() {
+    var hash = (location.hash && location.hash != "" ? location.hash: "#home");
+    return hash.match(/#([a-zA-Z0-9_-]+)(\/.*)?/);
 	}
 	
+	function currentSectionName() {
+    return parseLocationHash()[1];
+  }
+	
 	function currentSection() {
-		return $(location.hash && location.hash != "" ? location.hash: "#home");
+	  return $('#' + currentSectionName());
 	}
 	
 	function sectionPosition(section) {
@@ -133,6 +139,14 @@ jQuery( function($){
 			};
 		}
 		
+		var parsedLocation = parseLocationHash();
+		if (parsedLocation[1] == 'blog' && parsedLocation[2]) {
+		  var newSrc = 'http://opticode.ch/blog' + parsedLocation[2];
+		  var iframe = $('#blog iframe')[0];
+		  if (iframe.src != newSrc) {
+		    iframe.src = newSrc;
+		  } 
+		}
 		var section = currentSection();		
 		var pos = translationForSection(section);
 		var previousSection = $("section.selectedSection");
@@ -244,3 +258,9 @@ jQuery( function($){
 			+ '<span>' + $(this).html() + '</span>');
 	});
 });
+
+function blogIframeLoaded() {
+  var iframe = $('#blog iframe')[0];
+  window.location = 
+    iframe.src.replace(/.*opticode.ch\/blog/, window.location.pathname + window.location.search + '#blog');
+}

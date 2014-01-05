@@ -63,6 +63,7 @@ require("content/service-code-review.php");
 require("content/contact.php");
 require("content/publications.php");
 require("content/video.php");
+require("content/blog.php");
 ?>
     	</div></div>
 
