@@ -161,11 +161,11 @@ body > header {
 nav {
 	display: block;
 	overflow: hidden;
-	font-size: 32pt;
+	font-size: 24pt;
 	font-family: "pixel";
 	position:relative;
 	text-align:right;
-	line-height: 15pt;
+	/*line-height: 15pt;*/
 	padding-bottom: 30px;
 }
 
@@ -175,8 +175,8 @@ nav #logo {
 }
 
 #invert, nav > ul li:hover, *.activeMenuItem {
-	color: #f1ec97;
-	background-color:#00009E;
+       color: #f1ec97;
+       background-color:#00009E;  
 }
 
 #invert {
@@ -193,7 +193,7 @@ nav > ul {
 
 nav > ul li {
 	display: inline-block;
-	font-size: 20pt;
+	font-size: 12pt;
 }
 
 nav a {
@@ -251,8 +251,15 @@ h2 {
 @font-face {
     font-family: 'pixel';
     font-style: normal;
-    src: url('monaco.ttf')
+    src: url('Erbos-Draco-1st-Open-NBP.ttf')
 }
+
+@font-face {
+    font-family: 'pixel-invert';
+    font-style: normal;
+    src: url('Erbos-Draco-1st-NBP.ttf')
+}
+
 
 nav > ul li {
 	text-indent:0;
@@ -315,6 +322,13 @@ a[href$='.pdf'] {
 	background:url(../img/icon-pdf-file.svg)  center right no-repeat;
     padding-right:20px;
     background-size: 13px 17px;
+}
+
+#blog iframe {
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  border-width: 0px;
 }
 
 /* Youtube video list */
