@@ -6,6 +6,21 @@
  * Thank you for your interest.
  * Julien Pilet - julien.pilet@opticode.ch
  */
+
+// Returns an array with: full location hash, section name, section subpath.
+function parseLocationHash() {
+  var hash = (location.hash && location.hash != "" ? location.hash: "#home");
+  return hash.match(/#([a-zA-Z0-9_-]+)(\/.*)?/);
+}
+
+function currentSectionName() {
+  return parseLocationHash()[1];
+}
+
+function currentSection() {
+  return $('#' + currentSectionName());
+}
+
 jQuery( function($){
 	var activeMenuEntryForSection = {
 		"home": "home",
@@ -102,19 +117,7 @@ jQuery( function($){
 		selectSection();
 	}
 	
-	// Returns an array with: full location hash, section name, section subpath.
-	function parseLocationHash() {
-    var hash = (location.hash && location.hash != "" ? location.hash: "#home");
-    return hash.match(/#([a-zA-Z0-9_-]+)(\/.*)?/);
-	}
-	
-	function currentSectionName() {
-    return parseLocationHash()[1];
-  }
-	
-	function currentSection() {
-	  return $('#' + currentSectionName());
-	}
+
 	
 	function sectionPosition(section) {
 		var angle = $(section).attr("data-angle") * Math.PI / 180.0;
@@ -143,7 +146,7 @@ jQuery( function($){
 		if (parsedLocation[1] == 'blog' && parsedLocation[2]) {
 		  var newSrc = 'http://opticode.ch/blog' + parsedLocation[2];
 		  var iframe = $('#blog iframe')[0];
-		  if (iframe.src != newSrc) {
+		  if (iframe.contentWindow.location.href != newSrc) {
 		    iframe.src = newSrc;
 		  } 
 		}
@@ -260,7 +263,11 @@ jQuery( function($){
 });
 
 function blogIframeLoaded() {
-  var iframe = $('#blog iframe')[0];
-  window.location = 
-    iframe.src.replace(/.*opticode.ch\/blog/, window.location.pathname + window.location.search + '#blog');
+  if (currentSectionName() == 'blog') {
+    var iframe = $('#blog iframe')[0];
+    var newLocation = iframe.contentWindow.location.href.replace(/.*opticode.ch\/blog/, window.location.pathname + window.location.search + '#blog');
+    if (newLocation && newLocation != window.location) {
+        window.location = newLocation;
+    }
+  }
 }

@@ -1,9 +1,10 @@
 <section id ="home" data-radius="0" data-angle="0">
-        <nav><a href="#home"><!-- <img src="img/logo-1.svg"/> --><div id="logo">opti<span id="invert">c</span>ode.ch</div></a>
+        <nav><a href="#home"><img id="logo" src="img/logo.svg"/></a>
                 <ul>
                         <li><a href="#home">services</a></li><li><a href="#video">videos</a></li>
                 </ul><ul>
                         <li><a href="#contact">contact</a></li>
+                        <li><a href="#blog/">blog</a></li>
                 </ul>
                 <ul>
 <?php if($LANG == "fr") { ?>

@@ -1,4 +1,4 @@
-/*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
+/15px*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
 
 /*
  * What follows is the result of much research on cross-browser styling.
@@ -161,17 +161,16 @@ body > header {
 nav {
 	display: block;
 	overflow: hidden;
-	font-size: 24pt;
-	font-family: "pixel";
+	font-size: 14pt;
 	position:relative;
 	text-align:right;
-	/*line-height: 15pt;*/
 	padding-bottom: 30px;
 }
 
 nav #logo {
 	float: left;
 	padding-bottom: 5pt;
+  height: 40px;
 }
 
 #invert, nav > ul li:hover, *.activeMenuItem {
@@ -193,7 +192,6 @@ nav > ul {
 
 nav > ul li {
 	display: inline-block;
-	font-size: 12pt;
 }
 
 nav a {
@@ -251,15 +249,8 @@ h2 {
 @font-face {
     font-family: 'pixel';
     font-style: normal;
-    src: url('Erbos-Draco-1st-Open-NBP.ttf')
+    src: url('monaco.ttf')
 }
-
-@font-face {
-    font-family: 'pixel-invert';
-    font-style: normal;
-    src: url('Erbos-Draco-1st-NBP.ttf')
-}
-
 
 nav > ul li {
 	text-indent:0;
