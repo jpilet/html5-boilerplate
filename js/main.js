@@ -21,6 +21,17 @@ function currentSection() {
   return $('#' + currentSectionName());
 }
 
+function resizeBlog() {
+  var iframe = $('#blog iframe')[0];
+  try {
+    if (iframe && iframe.contentWindow && iframe.contentWindow.document && iframe.contentWindow.document.body) {
+      iframe.style.height = iframe.contentWindow.document.body.scrollHeight + "px";
+    }
+  } catch (err) {
+    // we ignore a potential access denied error
+  }
+}
+
 jQuery( function($){
 	var activeMenuEntryForSection = {
 		"home": "home",
@@ -114,6 +125,7 @@ jQuery( function($){
 			"padding-right": border.width + "px",
 		});
 		
+		resizeBlog();
 		placeSections();
 		selectSection();
 	}
@@ -279,4 +291,5 @@ function blogIframeLoaded() {
         window.location = newLocation;
     }
   }
+  resizeBlog();
 }
