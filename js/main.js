@@ -32,6 +32,7 @@ jQuery( function($){
 		"video": "video",
 		"contact": "contact",
 		"index": "index",
+		"blog": "blog",
 	};
 	var geometry = {
 		sectionWidth: 0,
@@ -142,17 +143,24 @@ jQuery( function($){
 			};
 		}
 		
+    var section = currentSection();   
+    var pos = translationForSection(section);
+    var previousSection = $("section.selectedSection");
 		var parsedLocation = parseLocationHash();
-		if (parsedLocation[1] == 'blog' && parsedLocation[2]) {
-		  var newSrc = 'http://opticode.ch/blog' + parsedLocation[2];
-		  var iframe = $('#blog iframe')[0];
-		  if (iframe.contentWindow.location.href != newSrc) {
-		    iframe.src = newSrc;
-		  } 
+		if (parsedLocation[1] == 'blog') {
+      var iframe = $('#blog iframe')[0];
+		  if (parsedLocation[2]) {
+  		  var newSrc = 'http://opticode.ch/blog' + parsedLocation[2];
+  		  if (iframe.contentWindow.location.href != newSrc) {
+  		    iframe.src = newSrc;
+  		  }
+  		} else {
+  		  if (iframe.contentWindow.location.href.match(/opticode.ch\/blog\/./)) {
+  		    window.location += iframe.contentWindow.location.href.replace(/.*opticode.ch\/blog/,'');
+  		    return;
+  		  }
+  		}
 		}
-		var section = currentSection();		
-		var pos = translationForSection(section);
-		var previousSection = $("section.selectedSection");
 		
 		if (previousTranslation && section[0] === previousSection[0]) {
 		  // nothing to do.
@@ -265,8 +273,9 @@ jQuery( function($){
 function blogIframeLoaded() {
   if (currentSectionName() == 'blog') {
     var iframe = $('#blog iframe')[0];
-    var newLocation = iframe.contentWindow.location.href.replace(/.*opticode.ch\/blog/, window.location.pathname + window.location.search + '#blog');
-    if (newLocation && newLocation != window.location) {
+    var newLocation = iframe.contentWindow.location.href.replace(/.*opticode.ch\/blog/,
+      window.location.origin + window.location.pathname + window.location.search + '#blog');
+    if (newLocation && newLocation != window.location.href) {
         window.location = newLocation;
     }
   }
