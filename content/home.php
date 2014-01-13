@@ -1,7 +1,11 @@
 <section id ="home" data-radius="0" data-angle="0">
         <nav><a href="#home"><img id="logo" src="img/logo.svg"/></a>
                 <ul>
-                        <li><a href="#home">services</a></li><li><a href="#video">videos</a></li>
+<?php if($LANG == "fr") { ?>
+                    <li><a href="#home">services</a></li><li><a href="#video">vidéos</a></li>
+<?php } else { ?>
+                    <li><a href="#home">services</a></li><li><a href="#video">videos</a></li>
+<?php } ?>
                 </ul><ul>
                         <li><a href="#contact">contact</a></li>
                         <li><a href="#blog">blog</a></li>
@@ -17,7 +21,7 @@
         
 <?php if($LANG == "fr") { ?>
         <header>
-                <h1>L'art subtil du code</h1>
+                <h1>L'art du code</h1>
                 <p>Julien Pilet, votre expert R &amp; D</p>
         </header>
         
