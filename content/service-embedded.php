@@ -1,9 +1,10 @@
 <section id="service-embedded" data-radius="2" data-angle="25">
 <?php if ($LANG == "fr") { ?>
-    <h1>Systèmes embarqués</h1>
+    <header>
+        <h1>Systèmes embarqués</h1>
+    </header>
+
     <article>
-        
-        
         <span class="opticodeLogo"></span> fournit les services suivants:
         <ul>
                 <li>Programmation de systèmes embarqués;</li>
@@ -27,7 +28,9 @@
         
     </article>
 <?php } else { ?>
-    <h1>Embedded Systems</h1>
+    <header>
+        <h1>Embedded Systems</h1>
+    </header>
     <article>
         <span class="opticodeLogo"></span> provides the following services:
         <ul>

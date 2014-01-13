@@ -1,9 +1,10 @@
 <section id ="home" data-radius="0" data-angle="0">
-        <nav><a href="#home"><!-- <img src="img/logo-1.svg"/> --><div id="logo">opti<span id="invert">c</span>ode.ch</div></a>
+        <nav><a href="#home"><img id="logo" src="img/logo.svg"/></a>
                 <ul>
                         <li><a href="#home">services</a></li><li><a href="#video">videos</a></li>
                 </ul><ul>
                         <li><a href="#contact">contact</a></li>
+                        <li><a href="#blog">blog</a></li>
                 </ul>
                 <ul>
 <?php if($LANG == "fr") { ?>
@@ -16,7 +17,8 @@
         
 <?php if($LANG == "fr") { ?>
         <header>
-                <h1>Un expert R&amp;D à votre service</h1>
+                <h1>L'art subtil du code</h1>
+                <p>Julien Pilet, votre expert R &amp; D</p>
         </header>
         
         <div class="fixedColumnContainer"
@@ -33,7 +35,8 @@
                 </div>
 <?php } else { ?>
         <header>
-                <h1>A R&amp;D expert at your service</h1>
+                <h1>The fine Art of coding</h1>
+                <p>Julien Pilet, your R &amp; D expert</p>
         </header>
         
         <div class="fixedColumnContainer"
