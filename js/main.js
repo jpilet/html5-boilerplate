@@ -259,6 +259,7 @@ jQuery( function($){
   };
 	window.onresize();
 	
+        $('#blog iframe').attr('src', window.location.protocol + '//' + window.location.hostname + '/blog/');
 	
 	// Fill the index section
 	var index = "<ul>";
